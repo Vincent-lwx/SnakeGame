@@ -1367,43 +1367,6 @@ end
 assign pos_eated = (~eated_s) & eated_f;
 
 
-/*
-//吃到食物就得分
-always @(posedge vga_clk or negedge sys_rst_n) begin
-    if(!sys_rst_n) 
-	begin
-	    score <= 0;
-		en    <= 0;
-		point <= 6'b000000;
-		sign  <= 0;		
-		beep_en_eat <= 0;  // 初始化蜂鸣器使能信号
-	end
-    else 
-	begin
-		en    <= 1;
-		point <= 6'b000000;
-		sign  <= 0;	
-		
-		if(pos_eated)
-		begin
-			score <= score + 9'd20; // 增加得分
-			beep_en_eat <= 1'b1;       // 当蛇吃到食物时，触发蜂鸣器
-		end
-		
-		else if(die) 
-		begin
-			score <= 1'b0;
-			beep_en_eat <= 0;          // 重置蜂鸣器使能
-		end
-		
-		else begin
-			score <= score;
-			beep_en_eat <= 1'b0;
-		end
-		    
-	end
-end
-// */
 
 
 // /*
